@@ -1,0 +1,54 @@
+/*navigation bar related*/
+
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 1px 13px 0 rgba(0,0,0,0.21);
+	z-index: 6;
+}
+
+#menu-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #F97490;
+    margin-left: 15px;
+}
+
+.navbar {
+    padding: 6px 0px;
+}
+
+/*Logo Related*/
+
+#logo {
+    position: relative;
+    width: 120px;
+    left: -20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    margin: auto auto;
+    transition: margin-left .5s;
+    /*display: flex;
+    flex-direction: row;
+    margin: 100px;
+    justify-content: center;*/
+    /*padding-bottom: 20px;*/
+}
+
+#branjaLogoText {
+    font-family: 'Pacifico';
+    color: #F97490;
+    font-size: 30px;
+    margin: auto auto;
+    text-decoration: none;
+}
+
+#branjaLogoHouse {
+    width: 50px;
+    margin: auto auto;
+}
+
+#no-underline {
+    text-decoration: none;
+}

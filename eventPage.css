@@ -1,0 +1,96 @@
+.eventBody {
+    /*width:330px;*/
+    width: 100%;
+    max-width: 500px;
+    margin: auto auto;
+    color: black;
+    /*font-size: 14px;*/
+}
+
+.eventImage {
+    /*height: 200px;*/
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.eventImageHolder {
+    width: 100%;
+    max-width: 500px;
+    margin: auto auto;
+}
+
+.eventHeader {
+    margin: auto auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: normal;
+    text-align: center;
+    /*display: grid;*/
+    /*grid-template-columns: auto 66px;*/
+    /*grid-gap: 3px;*/
+}
+
+.eventHeader>.eventTitle {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+
+.eventHeader>.eventHost {
+    color: black;
+    font-size: 14px;
+}
+
+
+.eventDetails {
+    font-size: 14px;
+}
+
+.eventDate {
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    /*background-color: #53c653;*/
+    /*border: solid #53c653 2px;*/
+    border-radius: 8px;
+}
+
+
+/*<div class="eventDate" style="background-color: #53c653; border: solid #53c653 2px"><strong>MAR</strong><br>19</div>*/
+
+.invitation {
+    text-align: center;
+}
+
+#attendanceButton {
+    cursor: pointer;
+}
+
+.btn {
+	transition: .1s;
+}
+
+.btn-back {
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: #F97490;
+    border: #9E9E9E;
+}
+
+.btn-back:hover {
+    background-color: #f73b64;
+}
+
+hr {
+    /*margin: 7px 0px;*/
+}
+
+#cancelEvent {
+    cursor: pointer;
+    margin: auto auto;
+}

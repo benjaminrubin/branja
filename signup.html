@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+
+<!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="default_styles.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="navigationbar.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <title>Branja - Login</title>
+</head>
+<style type="text/css">
+.sidenav a {
+    text-decoration: none;
+}
+</style>
+
+<body>
+    <div class="dark-overlay" id="darkSideNav" onclick="closeNav()"></div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="description">
+            <!--             <p>This is <strong>branja</strong>.</p>
+            <p> Plan them here with friends, nice and simple. </p> -->
+            <h2> menu </h2>
+            </br>
+            <a href="homepage.html">homepage</a></br>
+            <a href="#">profile</a></br>
+            <a href="#">settings</a></br>
+            <a href="#">about</a></br>
+            </br>
+            <p><a href="#">logout</a></p>
+        </div>
+    </div>
+    <div id="main">
+        <nav class="navbar fixed-top navbar-dark bg-light main-nav d-flex">
+            <div id="menu-btn" onclick="openNav()">&#9776;</div>
+            <ul class="nav navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a href="index.html" id="no-underline">
+                        <div id="logo">
+                            <div><img src="images/house.png" id="branjaLogoHouse"></div>
+                            <div id="branjaLogoText">branja</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- end of navigation bar -->
+        <div class="body">
+            <div class="container" id="loginForm">
+                <h2> sign up </h2>
+                <br/>
+                <form action="signUpValidation.php" method="POST">
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <!-- <label for="email-id" class="col-sm-3 col-form-label text-sm-right">email:<span class="text-danger">*</span></label> -->
+                        <input type="email" class="form-control" id="email-id" name="email" placeholder="email*">
+                        <small id="email-error" class="invalid-feedback">email is required.</small>
+                    </div>
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <!-- <label for="username-id" class="col-sm-3 col-form-label text-sm-right">name:<span class="text-danger">*</span></label> -->
+                        <input type="text" class="form-control" id="fullName-id" name="fullName" placeholder="full name*">
+                        <small id="fullName-error" class="invalid-feedback">name is required.</small>
+                    </div>
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <!-- <label for="username-id" class="col-sm-3 col-form-label text-sm-right">name:<span class="text-danger">*</span></label> -->
+                        <input type="text" class="form-control" id="username-id" name="username" placeholder="username*">
+                        <small id="username-error" class="invalid-feedback">username is required.</small>
+                    </div>
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <!-- <label for="password-id" class="col-sm-3 col-form-label text-sm-right">password:<span class="text-danger">*</span></label> -->
+                        <input type="password" class="form-control" id="password-id" name="password" placeholder="password*">
+                        <small id="password-error" class="invalid-feedback">password is required.</small>
+                    </div>
+                    <!-- .form-group -->
+                    <div class="form-group">
+                        <!-- <label for="gender-id" class="col-sm-3 col-form-label text-sm-right">gender:<span class="text-danger">*</span></label> -->
+                        <select name="genderId" id="gender-id" class="form-control">
+                            <option value="" selected>(select gender)</option>
+                            <!-- Rating dropdown options here -->
+                            <option value="1" >male</option>
+                            <option value="2">female</option>
+                            <option value="3">not specified</option>
+                        </select>
+                        <small id="gender-error" class="invalid-feedback">Gender is required.</small>
+                    </div>
+                    <div id="error-messages"></div>
+                    <!-- .form-group -->
+                    <button type="submit" id="login" class="btn btn-default btn-block form-btn-hover col-sm-12 ">create user</button>
+                    <button type="reset" id="reset" class="btn btn-default btn-block form-btn-hover col-sm-12 ">reset values</button>
+                </form>
+                <hr>
+                <div class="center">
+                    <a href="index.html">&larr; back to log in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+function openNav() {
+    console.log(document.getElementById("darkSideNav").style.visibility);
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("darkSideNav").style.visibility = "visible";
+    document.getElementById("darkSideNav").style.opacity = "0.5";
+}
+
+function closeNav() {
+    console.log(document.getElementById("darkSideNav").style.visibility);
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("darkSideNav").style.opacity = "0";
+    document.getElementById("darkSideNav").style.visibility = "hidden";
+}
+</script>
+
+</html>
