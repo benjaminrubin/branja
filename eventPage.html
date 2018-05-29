@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="default_styles.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="navigationbar.css">
+    <link rel="stylesheet" type="text/css" href="eventPage.css">
+    <meta charset='utf-8'>
+    <title>Branja - Event Page</title>
+</head>
+<style type="text/css">
+.sidenav a {
+    text-decoration: none;
+}
+</style>
+
+<body onload="populate();">
+    <div class="dark-overlay" id="darkSideNav" onclick="closeNav()"></div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="description">
+            <!--             <p>This is <strong>branja</strong>.</p>
+            <p> Plan them here with friends, nice and simple. </p> -->
+            <h2> menu </h2>
+            </br>
+            <a href="homepage.html">homepage</a></br>
+            <a href="profilePage.html">profile</a></br>
+            <a href="#">search</a></br>
+            <!-- <a href="#">settings</a></br> -->
+            <!-- <a href="#">about</a></br> -->
+            </br>
+            <p><a href="#">logout</a></p>
+        </div>
+    </div>
+    <div id="main">
+        <nav class="navbar fixed-top navbar-dark bg-light main-nav d-flex">
+            <div id="menu-btn" onclick="openNav()">&#9776;</div>
+            <ul class="nav navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a href="index.html" id="no-underline">
+                        <div id="logo">
+                            <div><img src="images/house.png" id="branjaLogoHouse"></div>
+                            <div id="branjaLogoText">branja</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- end of navigation bar -->
+        <div class="body">
+            <div class="container">
+                <div class="eventBody">
+                    <input type="button" onclick="location.href='homepage.html';" class="btn btn-back" value="&larr; back to map" />
+                    <br>
+                    <div class="eventImageHolder"><img src="https://vegaspartyvip.com/wp-content/uploads/2013/02/rehab_party1.jpeg" alt="" class="eventImage"></div>
+                    <div class="eventHeader">
+                        <span class="eventTitle">MICHAEL'S BDAY PARTY</span>
+                        <br>
+                        <span class="eventHost">Hosted by <a href="profilePage.html?userID=143" class="">Michael Rubin</a> • <span style="color:#53c653">open event</span></span>
+                    </div>
+                    <div class="invitation">
+                        <div id="attendance">
+                            <button id="attendanceButton" class="btn btn-success">RSVP</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="eventDetails">
+                        📍702 West 30th Street, Los Angeles CA 90007
+                        <br>🗓March 19th, 2018
+                        <br> ⏰7:00pm - 10:00pm
+                        <hr> ✅100 going
+                        <br> 📩320 invited
+                        <hr> Introducing POOL FLIX AND CHILL, a sunset movie series presented by Red Rock Casino. Join us at the Crimson Pool on Monday May 14 as we watch a sunset flick, Wedding Crashers! Doors will open at 7:00pm and the movie will begin at 8:00pm Pool games & other activations will be provided by Freshwata. Sponsors Café Lola, Peroni and Pinkbox will be onsite handing out treats and samples. ntroducing POOL FLIX AND CHILL, a sunset movie series presented by Red Rock Casino. Join us at the Crimson Pool on Monday May 14 as we watch a sunset flick, Wedding Crashers! Doors will open at 7:00pm and the movie will begin at 8:00pm Pool games & other activations will be provided by Freshwata. Sponsors Café Lola, Peroni and Pinkbox will be onsite handing out treats and samples.ntroducing POOL FLIX AND CHILL,
+                        <br>
+                        <br> a sunset movie series presented by Red Rock Casino. Join us at the Crimson Pool on Monday May 14 as we watch a sunset flick, Wedding Crashers! Doors will open at 7:00pm and the movie will begin at 8:00pm Pool games & other activations will be provided by Freshwata. Sponsors Café Lola, Peroni and Pinkbox will be onsite handing out treats and samples.ntroducing POOL FLIX AND CHILL, a sunset movie series presented by Red Rock Casino. Join us at the Crimson Pool on Monday May 14 as we watch a sunset flick, Wedding Crashers! Doors will open at 7:00pm and the movie will begin at 8:00pm Pool games & other activations will be provided by Freshwata. Sponsors Café Lola, Peroni and Pinkbox will be onsite handing out treats and samples.
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+
+document.getElementById("attendanceButton").onclick = function() {
+
+    //store the value
+    var decision = this.innerHTML;
+
+    if (decision === "RSVP") {
+        this.classList.remove("btn-success");
+        this.classList.add("btn-warning");
+        this.innerHTML = "&times; cancel RSVP";
+
+        //send an AJAX call to the server to update the database
+
+
+    } else {
+        this.classList.remove("btn-warning");
+        this.classList.add("btn", "btn-success");
+        this.innerHTML = "RSVP";
+
+
+        //send an AJAX call to the server to update the database
+    }
+}
+
+
+function populate() {
+    // var event = {
+    //     eventID: "2",
+    //     eventName: "Michael's Bday Party",
+    //     eventType: "open",
+    //     eventAddress: "702 W 34th Street, CA 90007",
+    //     eventDate: "March 29th at 7:00 PM",
+    //     eventAttendees: "200",
+    //     eventImage: "https://vegaspartyvip.com/wp-content/uploads/2013/02/rehab_party1.jpeg",
+    //     latitude: "34.041266",
+    //     longitude: "-118.269530"
+    // };
+
+
+    // var imageHolder = document.createElement("div");
+    // imageHolder.classList.add("eventImageHolder");
+    // var image = document.createElement("img");
+    // image.classList.add("eventImage");
+    // image.src = event.eventImage;
+
+    // imageHolder.appendChild(image);
+
+    // document.querySelector(".container").appendChild(imageHolder);
+}
+</script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+function openNav() {
+    console.log(document.getElementById("darkSideNav").style.visibility);
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("darkSideNav").style.visibility = "visible";
+    document.getElementById("darkSideNav").style.opacity = "0.5";
+}
+
+function closeNav() {
+    console.log(document.getElementById("darkSideNav").style.visibility);
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("darkSideNav").style.opacity = "0";
+    document.getElementById("darkSideNav").style.visibility = "hidden";
+}
+</script>
+
+</html>
